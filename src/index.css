@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-family {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.text-3d {
+    /* text-transform: uppercase;   */
+    font-family: 'Trebuchet MS';
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+
+
+@keyframes coin-rotate {
+    0% {
+        transform: rotateY(0);
+    }
+
+    10% {
+        transform: rotateY(36deg);
+    }
+
+    20% {
+        transform: rotateY(72deg);
+    }
+
+    30% {
+        transform: rotateY(108deg);
+    }
+
+    40% {
+        transform: rotateY(144deg);
+    }
+    
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    60% {
+        transform: rotateY(216deg);
+    }
+
+    70% {
+        transform: rotateY(252deg);
+    }
+    
+    80% {
+        transform: rotateY(288deg);
+    }
+
+    90% {
+        transform: rotateY(324deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.coin {
+    animation-name: coin-rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+@keyframes example {
+    /* from {
+        background-color: green;
+    }
+
+    to {
+        background-color: yellow;
+    } */
+
+    0% {
+        color: darkblue;
+    }
+
+    25% {
+        color: darkorange;
+        /* transform: scale(1.5); */
+    }
+
+    50% {
+        color: cyan;
+        /* transform: scale(2); */
+    }
+
+    100% {
+        color: red;
+        /* transform: scale(2.5); */
+    }
+}
+
+
+
+
+.my-rainbow {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+    animation-timing-function: linear;
+}
