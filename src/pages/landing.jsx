@@ -27,7 +27,7 @@ const Landing = () => {
 
             <div className="flex flex-col gap-[2rem] items-center w-[600px]">
 
-                <p className="text-[25pt] font-bold">UNIQUE MEAL PLANS</p>
+                <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">UNIQUE MEAL PLANS</p>
 
                 <div>
 

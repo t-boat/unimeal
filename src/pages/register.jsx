@@ -23,13 +23,13 @@ const Register = () => {
 
         <div className="flex h-screen text-family">
 
-            <div className="flex flex-[40%] justify-center items-center bg-[#B8A8AB]">
+            <div className="flex flex-[40%] justify-center items-center bg-[#DECDD1]">
 
                 <div className="w-[70%] ">
 
-                    <p className="text-3d coin text-center text-[30pt] font-bold mb-4">UnikMeal</p>
+                    <p className="text-3d text-center text-[30pt] font-bold mb-4">UnikMeal</p>
 
-                    <p className="text-center text-[13pt] text-slate-800 tracking-widest">Uniquely curated meal plans</p>
+                    <p className="text-center text-[13pt] text-slate-800 tracking-widest"> <span className="my-rainbow">Uniquely</span> curated meal plans</p>
 
                 </div>
 

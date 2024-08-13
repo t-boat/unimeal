@@ -95,27 +95,24 @@
     } */
 
     0% {
-        color: darkblue;
+        color: blue;
     }
 
     25% {
-        color: darkorange;
+        color: crimson;
         /* transform: scale(1.5); */
     }
 
     50% {
-        color: cyan;
+        color: green;
         /* transform: scale(2); */
     }
 
     100% {
-        color: red;
+        color: purple;
         /* transform: scale(2.5); */
     }
 }
-
-
-
 
 .my-rainbow {
     animation-name: example;
