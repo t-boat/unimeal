@@ -11,7 +11,7 @@ const Landing = () => {
             <nav className="absolute top-0 flex justify-between items-center w-full h-[60px] px-[2rem]">
 
                 <div>
-                    <a href="#" className="text-[20pt] font-bold text-3d">UnikMeal</a>
+                    <a href="#" className="text-[20pt] font-bold text-3d">LiveUp</a>
                 </div>
 
                 <div className="flex gap-x-[2rem]">

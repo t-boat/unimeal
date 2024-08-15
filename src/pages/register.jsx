@@ -27,7 +27,7 @@ const Register = () => {
 
                 <div className="w-[70%] ">
 
-                    <p className="text-3d text-center text-[30pt] font-bold mb-4">UnikMeal</p>
+                    <p className="text-3d text-center text-[30pt] font-bold mb-4">LiveUp</p>
 
                     <p className="text-center text-[13pt] tracking-widest"> <span className="my-rainbow">Uniquely</span> curated meal plans</p>
 
