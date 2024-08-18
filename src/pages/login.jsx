@@ -1,9 +1,10 @@
+import { Bounce, Flip, toast } from "react-toastify";
+import Loader from "./loader";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { logIn } from "../services/auth";
-import { toast } from "react-toastify";
-import Loader from "./loader";
+
 
 
 const Login = () => {
@@ -42,18 +43,44 @@ const Login = () => {
                 email: data.email,
                 password: data.password
             });
+            
 
             localStorage.setItem('accessToken', res.data.accessToken);
 
-            toast.success(res.data.message);
+
+            toast.success(res.data.message, {
+                position: "top-left",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+            });
 
             console.log('Response: ', res.data);
+
+            setTimeout(() => {
+                nextPage('/bmi');
+            }, 4500);
 
         }
 
         catch (error) {
             console.log(error);
-            toast.error('An error occured!');
+            toast.error('An error occured!', {
+                position: "top-left",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+            });
         }
 
         finally {
@@ -72,8 +99,7 @@ const Login = () => {
 
                 <form
                     onSubmit={handleSubmit(postForm)}
-                    className="border rounded-lg shadow-lg py-[2.5rem] px-[2rem] flex flex-col gap-[1.5rem]"
-                >
+                    className="border rounded-lg shadow-lg py-[2.5rem] px-[2rem] flex flex-col gap-[1.5rem]">
 
                     <div className="">
 
@@ -84,7 +110,7 @@ const Login = () => {
                     </div>
 
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col">
 
                         <fieldset className="text[9pt]">
 
@@ -98,7 +124,9 @@ const Login = () => {
                                 className="border border-[#B8A8AB] rounded outline-none w-full px-[0.35rem] py-1 text-[10pt]"
                             />
 
-                            {errors.email && (<span className="flex justify-end text-red-600 text[9pt]">{errors.email.message}</span>)}
+                            <p className="flex justify-end items-center mt-0 mb-0 text-[9pt]">
+                                {errors.email ? (<span className="text-red-600 text[9pt]">{errors.email.message}</span>) : (/ /g, "\u00A0")}
+                            </p>
 
                         </fieldset>
 
@@ -117,27 +145,27 @@ const Login = () => {
                                 className="border border-[#B8A8AB] rounded outline-none w-full px-[0.35rem] py-1 text-[10pt]"
                             />
 
-                            <p className="flex justify-between items-center mt-[0.1rem] mb-0 text-[9pt] text-[rgba(0,0,0,0.5)]">
+                            <p className="flex justify-between items-center mt-0 mb-2 text-[9pt] text-[rgba(0,0,0,0.5)]">
 
                                 <label className="flex gap-[0.2rem]"> <input type="checkbox" checked={showPassword} onChange={togglePasswordVisibility} /> Show Password</label>
 
-                                {errors.password && (<span className="text-red-600 text-[9pt]">{errors.password.message}</span>)}
+                                {errors.password ? (<span className="text-red-600">{errors.password.message}</span>) : (/ /g, "\u00A0")}
 
                             </p>
 
                         </fieldset>
 
 
-                        <button type="submit" className="rounded py-2 flex justify-center items-center font-semibold bg-[#B8A8AB] text-white">
+                        <button type="submit" className="rounded py-2 flex justify-center items-center font-semibold bg-[#B8A8AB] text-white hover:bg-blue-700 tracking-[3px]">
 
-                            {isSubmitting? <Loader /> : 'SIGN IN'}
-                            
+                            {isSubmitting ? <Loader /> : 'SIGN IN'}
+
                         </button>
 
                     </div>
 
 
-                    <p className="text-center text-[10pt] text-[rgba(0,0,0,0.5)]">Don't have an account? <Link to={'/register'} className="text-blue-500 font-semibold">Sign Up</Link> </p>
+                    <p className="text-center text-[10pt] text-[rgba(0,0,0,0.5)]">Don't have an account? <Link to={'/register'} className="text-blue-500 font-semibold hover:text-green-700">Sign Up</Link> </p>
 
                 </form>
 
@@ -145,13 +173,13 @@ const Login = () => {
 
 
 
-            <div className="flex flex-[40%] justify-center items-center bg-[#DECDD1]">
+            <div className="flex flex-[45%] justify-center items-center bg-[#DECDD1]">
 
-                <div className="w-[70%] ">
+                <div className="w-[90%] ">
 
                     <p className="text-3d text-center text-[30pt] font-bold mb-4">LiveUp</p>
 
-                    <p className="text-center text-[13pt] tracking-widest">...because you are <span className="my-rainbow   ">unique</span>!</p>
+                    <p className="text-center text-[13pt] tracking-widest"><span className="my-rainbow   ">unique</span> meal plans tailored to your needs</p>
 
                 </div>
 

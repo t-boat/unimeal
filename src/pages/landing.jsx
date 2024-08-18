@@ -16,18 +16,18 @@ const Landing = () => {
 
                 <div className="flex gap-x-[2rem]">
 
-                    <Link to={"/login"} className="bg-[#DECDD1] px-[30px] py-[8px] rounded font-semibold shadow-xl">Login</Link>
+                    <Link to={"/login"} className="bg-[#DECDD1] px-[30px] py-[8px] rounded font-semibold shadow-xl hover:bg-blue-700 hover:text-white">Login</Link>
 
-                    <Link to={"/register"} className="bg-[#DECDD1] px-[22px] py-[8px] rounded font-semibold shadow-xl">Sign Up</Link>
+                    <Link to={"/register"} className="bg-[#DECDD1] px-[22px] py-[8px] rounded font-semibold shadow-xl hover:bg-blue-700 hover:text-white">Sign Up</Link>
 
                 </div>
 
             </nav>
 
 
-            <div className="flex flex-col gap-[2rem] items-center w-[600px]">
+            <div className="flex flex-col gap-[2rem] items-center w-[50%]">
 
-                <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">UNIQUE MEAL PLANS</p>
+                <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">PERSONALIZED MEAL PLANS</p>
 
                 <div>
 

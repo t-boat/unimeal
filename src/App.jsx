@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Landing from "./pages/landing";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import CalculatorPage from "./pages/calculatorPage";
 
 
 
@@ -21,7 +22,12 @@ function App() {
     {
       path:"/register",
       element: <Register />
-    }
+    },
+
+    {
+      path:"/bmi",
+      element: <CalculatorPage />
+    },
   ]);
 
 
