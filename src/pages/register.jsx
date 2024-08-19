@@ -110,11 +110,11 @@ const Register = () => {
 
             <div className="flex flex-[60%] justify-center items-center">
 
-                <form onSubmit={handleSubmit(postForm)} className="border rounded-lg shadow-lg py-[1.5rem] px-[2rem] flex flex-col gap-[1rem]">
+                <form onSubmit={handleSubmit(postForm)} className="border max-w-[400px] rounded-lg shadow-lg py-[1.5rem] px-[2rem] flex flex-col gap-[1rem]">
 
                     <div className="">
 
-                        <p className="font-bold text-center text-[15pt] text-[rgba(0,0,0,0.5)]">Hello, unik!</p>
+                        <p className="font-bold text-center text-[15pt] text-[rgba(0,0,0,0.5)]">Hello, guest!</p>
 
                         <p className="text-center text-[10pt] text-[rgba(0,0,0,0.5)]">Create your unique account</p>
 
@@ -134,7 +134,7 @@ const Register = () => {
                                     size={20}
                                     placeholder="First name is required"
                                     className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
-                                    {...register('firstName', { required: 'First name is required!' })}
+                                    {...register('firstName', { required: '*First name required!' })}
                                 />
 
                                 <p className="flex items-center mt-0 mb-0 text-[9pt]">
@@ -152,7 +152,7 @@ const Register = () => {
                                     size={20}
                                     placeholder="Last name is required"
                                     className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
-                                    {...register('lastName', { required: 'Last name is required!' })}
+                                    {...register('lastName', { required: '*Last name required!' })}
                                 />
 
                                 <p className="flex items-center mt-0 mb-0 text-[9pt]">
@@ -164,48 +164,48 @@ const Register = () => {
                         </div>
 
 
-                        <fieldset>
-
-                            <legend className="text-[9pt] text-[rgba(0,0,0,0.5)]">E-mail:</legend>
-
-                            <input
-                                type="email"
-                                size={20}
-                                placeholder="Your e-mail is required"
-                                className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
-                                {...register('email', { required: 'E-mail is required!' })}
-                            />
-
-                            <p className="flex items-center mt-0 mb-0 text-[9pt]">
-                                {errors.email ? (<span className="text-red-600 text[9pt]">{errors.email.message}</span>) : (/ /g, "\u00A0")}
-                            </p>
-
-                        </fieldset>
-
-
                         <div className="flex gap-x-2">
 
-                            <fieldset>
+                            <fieldset className="w-[65%]">
+
+                                <legend className="text-[9pt] text-[rgba(0,0,0,0.5)]">E-mail:</legend>
+
+                                <input
+                                    type="email"
+                                    size={20}
+                                    placeholder="Your e-mail is required"
+                                    className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt] "
+                                    {...register('email', { required: '*E-mail is required!' })}
+                                />
+
+                                <p className="flex items-center mt-0 mb-0 text-[9pt]">
+                                    {errors.email ? (<span className="text-red-600 text[9pt]">{errors.email.message}</span>) : (/ /g, "\u00A0")}
+                                </p>
+
+                            </fieldset>
+
+                            <fieldset className="w-[35%]">
 
                                 <legend className="text-[9pt] text-[rgba(0,0,0,0.5)]">Username:</legend>
 
                                 <input
                                     type="text"
                                     size={20}
-                                    placeholder="username is required"
-                                    className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
-                                    {...register('userName', { required: 'A username is required!' })}
+                                    placeholder="unique username"
+                                    className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt] "
+                                    {...register('userName', { required: '*Username required!' })}
                                 />
-
-                                <p className="flex text-wrap items-center mt-0 mb-0 text-[9pt]">
-                                    {errors.password && (<span className="text-red-600 text[9pt]">{errors.password.message}</span>)}
-                                </p>
 
                                 <p className="flex text-wrap items-center mt-0 mb-0 text-[9pt]">
                                     {errors.userName ? (<span className="text-red-600 text[9pt]">{errors.userName.message}</span>) : (/ /g, "\u00A0")}
                                 </p>
 
                             </fieldset>
+
+                        </div>
+
+
+                        <div className="flex gap-x-2">
 
                             <fieldset>
 
@@ -216,21 +216,46 @@ const Register = () => {
                                     size={20}
                                     onChange={handlePasswordChange}
                                     placeholder="Minimum of 8 characters"
+                                    title="8 characters minimum. Requires a digit, an uppercase, and a lowercase"
                                     className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
                                     {...register('password', {
-                                        required: 'Password field is required!', minLength: { value: 8, message: 'Password must be 8 or more char' }, pattern: { value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, message: "At least: one  number, one uppercase, one lowercase" },
+                                        required: '*Password required!', minLength: { value: 8, message: 'Must be 8 or more characters' }, pattern: { value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, message: "*Requires a digit, an uppercase, a lowercase" },
                                     })}
                                 />
 
-                                <p className="flex justify-end mt-0 mb-0 text-[9.5pt] text-[rgba(0,0,0,0.5)]">
+                            </fieldset>
 
-                                    <label className="flex gap-[0.2rem]">Show Password <input type="checkbox" checked={showPassword} onChange={togglePasswordVisibility} /> </label>
 
-                                </p>
+                            <fieldset>
+
+                                <legend className="text-[9pt] text-[rgba(0,0,0,0.5)]">Confirm Password:</legend>
+
+                                <input
+                                    type={showPassword ? 'text' : 'password'}
+                                    size={20}
+                                    onChange={handlePasswordChange}
+                                    placeholder="Minimum of 8 characters"
+                                    title="8 characters minimum. Requires a digit, an uppercase, and a lowercase"
+                                    className="border border-[#B8A8AB] rounded outline-none w-full px-[0.25rem] py-1 text-[10pt]"
+                                    {...register('confirmPassword', {
+                                        required: '*Confirm password!', minLength: { value: 8, message: 'Must be 8 or more characters' }, pattern: { value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, message: "*Requires a digit, an uppercase, a lowercase" },
+                                    })}
+                                />
 
                             </fieldset>
 
                         </div>
+
+
+                        <p className="flex justify-between items-center mt-0 mb-2 text-wrap text-[9pt] text-[rgba(0,0,0,0.5)]">
+
+                            <label className="flex gap-[0.2rem]"> <input type="checkbox" checked={showPassword} onChange={togglePasswordVisibility} /> Show Password</label>
+
+                            {errors.password ? (<span className="text-red-600">{errors.password.message}</span>) : (/ /g, "\u00A0")}
+
+                            {errors.confirmPassword ? (<span className="text-red-600">{errors.confirmPassword.message}</span>) : (/ /g, "\u00A0")}
+
+                        </p>
 
 
                         <div className="flex flex-col items-center">

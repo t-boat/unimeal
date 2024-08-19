@@ -25,9 +25,9 @@ const Landing = () => {
             </nav>
 
 
-            <div className="flex flex-col gap-[2rem] items-center w-[50%]">
+            <div className="flex flex-col gap-[2rem] items-center justify-evenly w-[60%] border">
 
-                <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">PERSONALIZED MEAL PLANS</p>
+                <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">UNIQUE MEAL PLANS</p>
 
                 <div>
 
@@ -46,22 +46,22 @@ const Landing = () => {
                     </p>
 
                     <div className="flex">
-                        <img src={femaleFoto} alt="" />
-                        <img src={maleFoto} alt="" />
+                        <img src={femaleFoto} alt="" className="object-scale-down"/>
+                        <img src={maleFoto} alt="" className="object-scale-down"/>
                     </div>
 
                 </div>
 
-                <div className="w-[500px]">
+                <div className="w-[79%]">
 
                     <p className="flex items-baseline gap-1">
                         
                         <input type="checkbox" id="consent" defaultChecked/>
 
-                        <label htmlFor="consent" className="text-[rgba(0,0,0,0.5)] text-[10.5pt]">By continuing, I agree with the Terms of Service, Money-Back Policy, Privacy Policy, Subscription Terms, and Cookie Policy.</label>
+                        <label htmlFor="consent" className="text-[rgba(0,0,0,0.5)] text-[11pt]">By continuing, I agree with the Terms of Service, Money-Back Policy, Privacy Policy, Subscription Terms, and Cookie Policy.</label>
                     </p>
 
-                    <p className="text-[rgba(0,0,0,0.5)] text-[10pt] pl-4 mt-4">We recommend you consult your physician before starting to follow any weight loss program.</p>
+                    <p className="text-[rgba(0,0,0,0.5)] text-[10pt] mt-4">We recommend you consult your physician before starting to follow any weight loss program.</p>
 
                 </div>
 
