@@ -25,7 +25,7 @@ const Landing = () => {
             </nav>
 
 
-            <div className="flex flex-col gap-[2rem] items-center justify-evenly w-[60%] border">
+            <div className="flex flex-col gap-[2rem] items-center justify-evenly w-[60%]">
 
                 <p className="text-[30pt] font-bold text-[rgba(0,0,0,0.5)]">UNIQUE MEAL PLANS</p>
 
