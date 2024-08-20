@@ -122,3 +122,7 @@
     /* animation-direction: alternate; */
     animation-timing-function: linear;
 }
+
+.my-rainbow:hover {
+    animation-play-state: paused;
+}

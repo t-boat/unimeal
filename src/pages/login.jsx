@@ -69,18 +69,39 @@ const Login = () => {
         }
 
         catch (error) {
+
             console.log(error);
-            toast.error('An error occured!', {
-                position: "top-left",
-                autoClose: 4000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Flip,
-            });
+
+            if (res.data.message == "user does not exist") {
+                
+                toast.error('Invalid credentials!', {
+                    position: "top-left",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Flip,
+                });
+            }
+
+            else {
+
+                toast.error('An error occured!', {
+                    position: "top-left",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Flip,
+                });
+            }
+
         }
 
         finally {
