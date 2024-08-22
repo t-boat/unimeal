@@ -20,7 +20,7 @@ import { ArrowBigLeft } from 'lucide-react';
 
 const MealRecommendation = () => {
 
-    const query = new URLSearchParams(useLocation().search);
+    const query = new URLSearchParams(window.location.search);
 
     const bmiValue = query.get('bmiValue');
     console.log(bmiValue);
