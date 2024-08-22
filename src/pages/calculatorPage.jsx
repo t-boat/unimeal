@@ -21,7 +21,7 @@ const CalculatorPage = () => {
 
     const bmiValue = Number(bmi);
 
-    const storage = window.localStorage;
+    const storage = sessionStorage;
     storage.setItem("bmi", bmi);
 
     const bmiCalculator = () => {

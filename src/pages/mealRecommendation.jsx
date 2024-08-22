@@ -23,7 +23,7 @@ const MealRecommendation = () => {
     // const [searchParams, setSearchParams] = useSearchParams(window.location.search);
     // const query = new URLSearchParams(useLocation().search);
     // const bmiValue = Number(searchParams.get('bmiValue'));
-    const bmi = localStorage.getItem('bmi');
+    const bmi = sessionStorage.getItem('bmi');
     const bmiValue = Number(bmi);
 
     console.log(bmiValue);
