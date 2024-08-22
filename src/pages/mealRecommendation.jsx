@@ -20,12 +20,14 @@ import { ArrowBigLeft } from 'lucide-react';
 
 const MealRecommendation = () => {
 
-    const [searchParams, setSearchParams] = useSearchParams(window.location.search);
-
+    // const [searchParams, setSearchParams] = useSearchParams(window.location.search);
     // const query = new URLSearchParams(useLocation().search);
+    // const bmiValue = Number(searchParams.get('bmiValue'));
+    const bmi = localStorage.getItem('bmi');
+    const bmiValue = Number(bmi);
 
-    const bmiValue = searchParams.get('bmiValue');
     console.log(bmiValue);
+
 
 
 
@@ -267,7 +269,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation4" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to aid fat burning and get rid of extra weight faster.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
 
                 <p>
                     To help burn fat while still maintaining a balanced diet, here are some meal ideas that are nutrient-rich and can support speedy weight loss: <br /> <br />

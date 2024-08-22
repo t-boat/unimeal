@@ -21,6 +21,8 @@ const CalculatorPage = () => {
 
     const bmiValue = Number(bmi);
 
+    const storage = window.localStorage;
+    storage.setItem("bmi", bmi);
 
     const bmiCalculator = () => {
 
@@ -204,7 +206,7 @@ const CalculatorPage = () => {
                         <div className="flex flex-col items-center justify-center">
 
                             <p className="text-center">
-                                Get meal <br /> recommendations <br /> <Link to={`/meals?bmiValue=${bmiValue}`} className="text-blue-700 font-semibold">here</Link> 
+                                Get meal <br /> recommendations <br /> <Link to={`/meals`} className="text-blue-700 font-semibold">here</Link>
                             </p>
 
                             {/* <p id="interpretation" className="flex bg-white rounded px-[0.5rem] text-[18pt] font-bold">--</p> */}
