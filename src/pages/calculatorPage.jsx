@@ -78,11 +78,21 @@ const CalculatorPage = () => {
 
             document.getElementById("recommendation1").style.display = 'block';
 
+            document.getElementById("recommendation2").style.display = 'none';
+            document.getElementById("recommendation3").style.display = 'none';
+            document.getElementById("recommendation4").style.display = 'none';
+            document.getElementById("recommendation5").style.display = 'none';
+
         }
 
         else if (bmiValue >= 18.5 && bmiValue < 25.0) {
 
             document.getElementById("recommendation2").style.display = 'block';
+
+            document.getElementById("recommendation1").style.display = 'none';
+            document.getElementById("recommendation3").style.display = 'none';
+            document.getElementById("recommendation4").style.display = 'none';
+            document.getElementById("recommendation5").style.display = 'none';
 
         }
 
@@ -90,17 +100,32 @@ const CalculatorPage = () => {
 
             document.getElementById("recommendation3").style.display = 'block';
 
+            document.getElementById("recommendation1").style.display = 'none';
+            document.getElementById("recommendation2").style.display = 'none';
+            document.getElementById("recommendation4").style.display = 'none';
+            document.getElementById("recommendation5").style.display = 'none';
+
         }
 
         else if (bmiValue >= 30.0) {
 
             document.getElementById("recommendation4").style.display = 'block';
 
+            document.getElementById("recommendation1").style.display = 'none';
+            document.getElementById("recommendation2").style.display = 'none';
+            document.getElementById("recommendation3").style.display = 'none';
+            document.getElementById("recommendation5").style.display = 'none';
+
         }
 
         else {
 
             document.getElementById("recommendation5").style.display = 'block';
+
+            document.getElementById("recommendation1").style.display = 'none';
+            document.getElementById("recommendation2").style.display = 'none';
+            document.getElementById("recommendation3").style.display = 'none';
+            document.getElementById("recommendation4").style.display = 'none';
 
         }
 
