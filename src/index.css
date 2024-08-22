@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 
+
+
+h1 {
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+
+    60% {
+        background-position: 600px;
+    }
+
+    100% {
+        background-position: 0;
+    }
+}
+
+
+
+
 .text-family {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -51,7 +77,7 @@
     40% {
         transform: rotateY(144deg);
     }
-    
+
     50% {
         transform: rotateY(180deg);
     }
@@ -63,7 +89,7 @@
     70% {
         transform: rotateY(252deg);
     }
-    
+
     80% {
         transform: rotateY(288deg);
     }
