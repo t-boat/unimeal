@@ -11,7 +11,7 @@ import dinnerTwo from '../assets/dinner2.jpg';
 import dinnerThree from '../assets/dinner1.jpg';
 import dinnerFour from '../assets/dinner4.jpg';
 
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import { ArrowBigLeft } from 'lucide-react';
 
 
@@ -20,9 +20,11 @@ import { ArrowBigLeft } from 'lucide-react';
 
 const MealRecommendation = () => {
 
-    const query = new URLSearchParams(window.location.search);
+    const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
-    const bmiValue = query.get('bmiValue');
+    // const query = new URLSearchParams(useLocation().search);
+
+    const bmiValue = searchParams.get('bmiValue');
     console.log(bmiValue);
 
 
