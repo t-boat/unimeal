@@ -25,10 +25,21 @@ const Login = () => {
 
 
 
+    //trying to get the HTTP Status Code
+    // const [statusCode, setStatusCode] = useState(null);
+
+
+
     //Sign in logic
     const nextPage = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+
+    //saving the current user's email for use on next page
+    const currentUser = watch('email');
+    localStorage.setItem('currentUser', currentUser);
+
 
 
     const postForm = async (data) => {
@@ -43,24 +54,30 @@ const Login = () => {
                 email: data.email,
                 password: data.password
             });
-            
+
+
+            // setStatusCode(res.status);
+
+            if (res.status == 200) {
+                
+                toast.success('Login successful..', {
+                    position: "top-left",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Flip,
+                });
+            }
+
 
             localStorage.setItem('accessToken', res.data.accessToken);
 
-
-            toast.success(res.data.message, {
-                position: "top-left",
-                autoClose: 4000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Flip,
-            });
-
             console.log('Response: ', res.data);
+
 
             setTimeout(() => {
                 nextPage('/bmi');

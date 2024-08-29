@@ -1,6 +1,7 @@
 import weightScale from "../assets/scaleImage.svg";
 import { useForm } from "react-hook-form";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import breakFastOne from '../assets/breakfast1.jpg';
 import breakFastTwo from '../assets/breakfast2.jpg';
 import breakFastThree from '../assets/breakfast3.jpg';
@@ -27,14 +28,19 @@ const CalculatorPage = () => {
     const h = watch("height");
     const height = h / 100;
     const heightSquared = height * height;
+
     const weight = watch("weight");
+
 
     const bmi = (weight / heightSquared).toFixed(1);
 
     const bmiValue = Number(bmi);
 
+
     // const storage = window.localStorage;
     // storage.setItem("bmi", bmi);
+    const currentUser = localStorage.getItem('currentUser');
+
 
     const bmiCalculator = () => {
 
@@ -43,93 +49,33 @@ const CalculatorPage = () => {
         document.getElementById("bmi").innerText = bmi;
 
 
-        // if (bmiValue < 18.5) {
-        //     document.getElementById("interpretation").innerText = "underweight";
-        //     document.getElementById("recommend-action").innerText = "gain weight";
-        //     document.getElementById('recommend').style.opacity = 1;
-        // }
-
-        // else if (bmiValue >= 18.5 && bmiValue < 25.0) {
-        //     document.getElementById("interpretation").innerText = "normal";
-        //     document.getElementById("recommend-action").innerText = "maintain healthy weight";
-        //     document.getElementById('recommend').style.opacity = 1;
-        // }
-
-        // else if (bmiValue >= 25 && bmiValue < 30.0) {
-        //     document.getElementById("interpretation").innerText = "overweight";
-        //     document.getElementById("recommend-action").innerText = "burn some fat";
-        //     document.getElementById('recommend').style.opacity = 1;
-        // }
-
-        // else if (bmiValue >= 30.0) {
-        //     document.getElementById("interpretation").innerText = "obesity";
-        //     document.getElementById("recommend-action").innerText = "lose weight and reduce risk of illness";
-        //     document.getElementById('recommend').style.opacity = 1;
-        // }
-
-        // else { document.getElementById("interpretation").innerText = "invalid BMI"; }
-    }
-
-
-
-    const recommendation = () => {
-
         if (bmiValue < 18.5) {
-
-            document.getElementById("recommendation1").style.display = 'block';
-
-            document.getElementById("recommendation2").style.display = 'none';
-            document.getElementById("recommendation3").style.display = 'none';
-            document.getElementById("recommendation4").style.display = 'none';
-            document.getElementById("recommendation5").style.display = 'none';
-
+            document.getElementById("interpretation").innerText = "underweight";
+            document.getElementById("recommend-action").innerText = "gain weight";
+            document.getElementById('recommend').style.opacity = 1;
         }
 
         else if (bmiValue >= 18.5 && bmiValue < 25.0) {
-
-            document.getElementById("recommendation2").style.display = 'block';
-
-            document.getElementById("recommendation1").style.display = 'none';
-            document.getElementById("recommendation3").style.display = 'none';
-            document.getElementById("recommendation4").style.display = 'none';
-            document.getElementById("recommendation5").style.display = 'none';
-
+            document.getElementById("interpretation").innerText = "normal";
+            document.getElementById("recommend-action").innerText = "maintain healthy weight";
+            document.getElementById('recommend').style.opacity = 1;
         }
 
         else if (bmiValue >= 25 && bmiValue < 30.0) {
-
-            document.getElementById("recommendation3").style.display = 'block';
-
-            document.getElementById("recommendation1").style.display = 'none';
-            document.getElementById("recommendation2").style.display = 'none';
-            document.getElementById("recommendation4").style.display = 'none';
-            document.getElementById("recommendation5").style.display = 'none';
-
+            document.getElementById("interpretation").innerText = "overweight";
+            document.getElementById("recommend-action").innerText = "burn some fat";
+            document.getElementById('recommend').style.opacity = 1;
         }
 
         else if (bmiValue >= 30.0) {
-
-            document.getElementById("recommendation4").style.display = 'block';
-
-            document.getElementById("recommendation1").style.display = 'none';
-            document.getElementById("recommendation2").style.display = 'none';
-            document.getElementById("recommendation3").style.display = 'none';
-            document.getElementById("recommendation5").style.display = 'none';
-
+            document.getElementById("interpretation").innerText = "obesity";
+            document.getElementById("recommend-action").innerText = "lose weight and reduce risk of illness";
+            document.getElementById('recommend').style.opacity = 1;
         }
 
-        else {
-
-            document.getElementById("recommendation5").style.display = 'block';
-
-            document.getElementById("recommendation1").style.display = 'none';
-            document.getElementById("recommendation2").style.display = 'none';
-            document.getElementById("recommendation3").style.display = 'none';
-            document.getElementById("recommendation4").style.display = 'none';
-
-        }
-
+        else { document.getElementById("interpretation").innerText = "invalid BMI"; }
     }
+
 
 
 
@@ -138,7 +84,9 @@ const CalculatorPage = () => {
 
         <div className="text-family ">
 
-            <p className="my-[2rem] text-center text-[15pt] font-semibold">Great to see you!</p>
+            <p className="my-[2rem] text-center text-[15pt] font-semibold">
+                Great to see you, <span>{currentUser}</span>
+            </p>
 
             <p className="my-[2rem] text-center">Calculate your BMI for today and let's make personalized meal recommendations for you to keep your weight in check and stay healty.</p>
 
@@ -158,7 +106,7 @@ const CalculatorPage = () => {
                 </div>
 
 
-                <div className="flex gap-[2rem] py-6 w-min">
+                <div className="flex gap-[2rem] py-8 w-min">
 
                     <form
                         method="post"
@@ -238,12 +186,9 @@ const CalculatorPage = () => {
 
                         <div className="flex flex-col items-center justify-center">
 
-                            <p className="text-center">
-                                Get meal <br /> recommendations <br />
-                                <button onClick={recommendation} className="text-blue-700 font-semibold">here</button>
-                            </p>
+                            <p className="text-center">The CDC considers this as:</p>
 
-                            {/* <p id="interpretation" className="flex bg-white rounded px-[0.5rem] text-[18pt] font-bold">--</p> */}
+                            <p id="interpretation" className="flex bg-white rounded px-[0.5rem] text-[18pt] font-bold">--</p>
 
                         </div>
 
@@ -255,33 +200,31 @@ const CalculatorPage = () => {
 
 
 
-            {/* <p id="recommend" style={{ opacity: 0, color: 'blue' }} className="my-[1rem] flex justify-center gap-1">
+            <Link id="recommend" style={{ opacity: 0, color: 'blue' }} className="my-[1rem] flex justify-center gap-1" to={`/meals?bmi=${bmi}`}>
 
-                Based on your Body Mass Index, get recommended meal plans to
+                Based on your Body Mass Index, get recommended meals to
 
-                <button id="recommend-action" className="my-rainbow font-semibold" onClick={recommendation}></button>
+                <span id="recommend-action" className="my-rainbow font-semibold" ></span>
 
-            </p> */}
-
-
-
-            {/* <p id="recommendation" style={{ display: 'none' }} className="px-[4rem]"></p> */}
+            </Link>
 
 
 
-            {/* <p className="mt-[3rem] mb-[1rem] text-[13pt] text-[rgba(0,0,0,0.5)] font-semibold border-b max-w-fit mx-auto">Introduction to the Body Mass Index</p>
+            <p className="mt-[3rem] mb-[1rem] text-[13pt] text-[rgba(0,0,0,0.5)] font-semibold border-b max-w-fit mx-auto">
+                Introduction to the Body Mass Index
+            </p>
 
             <p className="mx-[4rem] text-[rgba(0,0,0,0.6)]">
                 Body Mass Index (BMI) is widely used as an indicator of body fat content. Your weight alone is not sufficient to establish if you are in a healthy weight range. For example, a tall but slender person can weigh more than a short but plump individual. But the former may enjoy better health as long as their weight is suitable for their height. The ideal weight is also likely to differ for men and women of similar heights. <br /> <br />
 
                 How then do you know whether you fall in the healthy weight range or not? Your BMI solves this confusion. It correlates your weight with your height and evaluates whether your weight is appropriate for your stature. You can use a BMI calculator to find out your BMI. <br /> <br />
 
-                Although not an exact measurement of body fat percentage, in most cases, BMI is a reliable tool for establishing risk levels for illnesses, especially ailments related to excess body fat. Many healthcare professionals use BMI to determine effective doses for medicines. Often people with a higher BMI need higher doses. Hence, it is crucial to be aware of your BMI to ensure your overall wellness
-            </p> */}
+                Although not an exact measurement of body fat percentage, in most cases, BMI is a reliable tool for establishing risk levels for illnesses, especially ailments related to excess body fat. Many healthcare professionals use BMI to determine effective doses for medicines. Often people with a higher BMI need higher doses. Hence, it is crucial to be aware of your BMI to ensure your overall wellness.
+            </p>
 
 
 
-            <div className="flex flex-col justify-center items-center text-family">
+            {/* <div className="flex flex-col justify-center items-center text-family">
 
                 <div id="recommendation1" style={{ display: 'none' }} className="w-[70%]">
 
@@ -549,7 +492,7 @@ const CalculatorPage = () => {
 
                 <div id='recommendation5' style={{ display: 'none' }} className='mt-[3rem] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the previous page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
 
-            </div>
+            </div> */}
 
         </div>
 

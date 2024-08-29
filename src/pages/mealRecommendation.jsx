@@ -11,8 +11,9 @@ import dinnerTwo from '../assets/dinner2.jpg';
 import dinnerThree from '../assets/dinner1.jpg';
 import dinnerFour from '../assets/dinner4.jpg';
 
-import queryString from 'query-string';
-import { useLocation, Link, useSearchParams } from 'react-router-dom';
+// import queryString from 'query-string';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowBigLeft } from 'lucide-react';
 
 
@@ -21,51 +22,99 @@ import { ArrowBigLeft } from 'lucide-react';
 
 const MealRecommendation = () => {
 
-    // const [searchParams, setSearchParams] = useSearchParams(window.location.search);
-    // const query = new URLSearchParams(useLocation().search);
-    // const bmiValue = Number(searchParams.get('bmiValue'));
+    // const params = new URLSearchParams(window.location.search);
     // const bmi = sessionStorage.getItem('bmi');
-    const queryParams = queryString.parse(window.location.search);
-    const {bmi} = queryParams;
 
 
-    const bmiValue = Number(bmi);
-    console.log(bmiValue);
+    const checkURLSearchParams = () => {
+
+        const params = new URLSearchParams(window.location.search);
+
+        const bmi = params.get('bmi');
+
+        if (bmi) {
+            // Your logic to determine which content to display
+            console.log('BMI found: ', bmi);
+            // Add more logic here as needed
+
+            const bmiValue = Number(bmi);
+            console.log('bmiValue is: ', bmiValue);
+
+
+
+            if (bmiValue < 18.5) {
+
+                document.getElementById("recommendation1").style.display = 'block';
+
+                document.getElementById("recommendation2").style.display = 'none';
+                document.getElementById("recommendation3").style.display = 'none';
+                document.getElementById("recommendation4").style.display = 'none';
+                document.getElementById("recommendation5").style.display = 'none';
+
+            }
+
+            else if (bmiValue >= 18.5 && bmiValue < 25.0) {
+
+                document.getElementById("recommendation2").style.display = 'block';
+
+                document.getElementById("recommendation1").style.display = 'none';
+                document.getElementById("recommendation3").style.display = 'none';
+                document.getElementById("recommendation4").style.display = 'none';
+                document.getElementById("recommendation5").style.display = 'none';
+
+            }
+
+            else if (bmiValue >= 25 && bmiValue < 30.0) {
+
+                document.getElementById("recommendation3").style.display = 'block';
+
+                document.getElementById("recommendation1").style.display = 'none';
+                document.getElementById("recommendation2").style.display = 'none';
+                document.getElementById("recommendation4").style.display = 'none';
+                document.getElementById("recommendation5").style.display = 'none';
+
+            }
+
+            else if (bmiValue >= 30.0) {
+
+                document.getElementById("recommendation4").style.display = 'block';
+
+                document.getElementById("recommendation1").style.display = 'none';
+                document.getElementById("recommendation2").style.display = 'none';
+                document.getElementById("recommendation3").style.display = 'none';
+                document.getElementById("recommendation5").style.display = 'none';
+
+            }
+        }
+
+
+
+        else {
+            console.log('Parameter not found.');
+            //when no BMI value is found
+
+            document.getElementById("recommendation5").style.display = 'block';
+
+            document.getElementById("recommendation1").style.display = 'none';
+            document.getElementById("recommendation2").style.display = 'none';
+            document.getElementById("recommendation3").style.display = 'none';
+            document.getElementById("recommendation4").style.display = 'none';
+        }
+    };
+
+
+
+    useEffect(() => {
+        checkURLSearchParams(); // Call the function to check URLSearchParams on component mount
+    }, []); // Empty dependency array ensures this runs only once after initial render
 
 
 
 
     window.onload = () => {
 
-        if (bmiValue < 18.5) {
-
-            document.getElementById("recommendation1").style.display = 'block';
-
-        }
-
-        else if (bmiValue >= 18.5 && bmiValue < 25.0) {
-
-            document.getElementById("recommendation2").style.display = 'block';
-
-        }
-
-        else if (bmiValue >= 25 && bmiValue < 30.0) {
-
-            document.getElementById("recommendation3").style.display = 'block';
-
-        }
-
-        else if (bmiValue >= 30.0) {
-
-            document.getElementById("recommendation4").style.display = 'block';
-
-        }
-
-        else {
-
-            document.getElementById("recommendation5").style.display = 'block';
-
-        }
+        // const queryParams = queryString.parse(window.location.search);
+        // const { bmi } = queryParams;
     }
 
 
@@ -75,11 +124,15 @@ const MealRecommendation = () => {
     return (
         <div className="flex flex-col justify-center items-center text-family relative">
 
-            <Link to={'/bmi'} className='absolute top-[0.5rem] left-[0.5rem] flex text-[11pt]' ><ArrowBigLeft /> return to BMI</Link>
+            <Link to={'/bmi'} className='absolute top-[0.5rem] left-[0.5rem] flex items-center text-[11pt]'>
+                <ArrowBigLeft /> Go Back
+            </Link>
+
+
 
             <div id="recommendation1" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to gain some weight.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to facilitate weight gain.</p>
 
                 <p>
                     To help you gain weight, focus on meals that are rich in calories, protein, and healthy fats. Here's a mix of meal ideas to get you started: <br /> <br />
@@ -134,7 +187,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation2" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
 
                 <p>
                     For someone with a normal BMI looking to maintain a healthy weight, it's important to focus on balanced meals that provide all essential nutrients. Here are some meal ideas for each part of the day: <br /> <br />
@@ -184,7 +237,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation3" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
 
                 <p>
                     Here are some meal ideas that can help with weight loss while providing essential nutrients: <br /> <br />
@@ -273,7 +326,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation4" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] text-center my-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
 
                 <p>
                     To help burn fat while still maintaining a balanced diet, here are some meal ideas that are nutrient-rich and can support speedy weight loss: <br /> <br />
@@ -341,7 +394,9 @@ const MealRecommendation = () => {
 
             </div>
 
-            <div id='recommendation5' style={{display: 'none'}} className='mt-[3rem] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the previous page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
+
+
+            <div id='recommendation5' style={{ display: 'none' }} className='mt-[3rem] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the BMI Calculator page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
 
         </div>
     );
