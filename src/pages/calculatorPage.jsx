@@ -85,7 +85,7 @@ const CalculatorPage = () => {
         <div className="text-family ">
 
             <p className="my-[2rem] text-center text-[15pt] font-semibold">
-                Great to see you, <span>{currentUser}</span>
+                Great to see you, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
             </p>
 
             <p className="my-[2rem] text-center">Calculate your BMI for today and let's make personalized meal recommendations for you to keep your weight in check and stay healty.</p>
