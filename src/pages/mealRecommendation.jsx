@@ -15,6 +15,7 @@ import dinnerFour from '../assets/dinner4.jpg';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowBigLeft } from 'lucide-react';
+import LogOutButton from './logOutButton';
 
 
 
@@ -22,8 +23,7 @@ import { ArrowBigLeft } from 'lucide-react';
 
 const MealRecommendation = () => {
 
-    // const params = new URLSearchParams(window.location.search);
-    // const bmi = sessionStorage.getItem('bmi');
+    // grab the forwarded data from the url of current page
 
 
     const checkURLSearchParams = () => {
@@ -90,7 +90,7 @@ const MealRecommendation = () => {
 
 
         else {
-            console.log('Parameter not found.');
+            console.log('BMI not found.');
             //when no BMI value is found
 
             document.getElementById("recommendation5").style.display = 'block';
@@ -111,28 +111,33 @@ const MealRecommendation = () => {
 
 
 
-    window.onload = () => {
+    // window.onload = () => {
 
-        // const queryParams = queryString.parse(window.location.search);
-        // const { bmi } = queryParams;
-    }
+    //     // const queryParams = queryString.parse(window.location.search);
+    //     // const { bmi } = queryParams;
+    // }
 
 
 
 
 
     return (
+
         <div className="flex flex-col justify-center items-center text-family relative">
 
             <Link to={'/bmi'} className='absolute top-[0.5rem] left-[0.5rem] flex items-center text-[11pt]'>
                 <ArrowBigLeft /> Go Back
             </Link>
 
+            <div className="absolute top-3 right-3">
+                <LogOutButton />
+            </div>
+
 
 
             <div id="recommendation1" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to facilitate weight gain.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to facilitate weight gain.</p>
 
                 <p>
                     To help you gain weight, focus on meals that are rich in calories, protein, and healthy fats. Here's a mix of meal ideas to get you started: <br /> <br />
@@ -187,7 +192,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation2" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
 
                 <p>
                     For someone with a normal BMI looking to maintain a healthy weight, it's important to focus on balanced meals that provide all essential nutrients. Here are some meal ideas for each part of the day: <br /> <br />
@@ -237,7 +242,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation3" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
 
                 <p>
                     Here are some meal ideas that can help with weight loss while providing essential nutrients: <br /> <br />
@@ -326,7 +331,7 @@ const MealRecommendation = () => {
 
             <div id="recommendation4" style={{ display: 'none' }} className="w-[70%]">
 
-                <p className="text-[rgb(176,42,48)] text-[13pt] my-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
+                <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
 
                 <p>
                     To help burn fat while still maintaining a balanced diet, here are some meal ideas that are nutrient-rich and can support speedy weight loss: <br /> <br />
@@ -396,7 +401,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id='recommendation5' style={{ display: 'none' }} className='mt-[3rem] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the BMI Calculator page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
+            <div id='recommendation5' style={{ display: 'none' }} className='mt-[4em] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the BMI Calculator page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
 
         </div>
     );

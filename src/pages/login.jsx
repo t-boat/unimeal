@@ -1,4 +1,4 @@
-import { Bounce, Flip, toast } from "react-toastify";
+import { Flip, toast } from "react-toastify";
 import Loader from "./loader";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -25,11 +25,6 @@ const Login = () => {
 
 
 
-    //trying to get the HTTP Status Code
-    // const [statusCode, setStatusCode] = useState(null);
-
-
-
     //Sign in logic
     const nextPage = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,10 +33,10 @@ const Login = () => {
 
     //saving the current user's email for use on next page
     const currentUser = watch('email');
-    localStorage.setItem('currentUser', currentUser);
 
 
 
+    //function to post the form data to backend
     const postForm = async (data) => {
 
         console.log(data);
@@ -56,10 +51,15 @@ const Login = () => {
             });
 
 
-            // setStatusCode(res.status);
-
             if (res.status == 200) {
                 
+                localStorage.setItem('isAuthenticated', 'true');
+    
+                localStorage.setItem('accessToken', res.data.accessToken);
+    
+                localStorage.setItem('currentUser', currentUser);
+
+
                 toast.success('Login successful..', {
                     position: "top-left",
                     autoClose: 4000,
@@ -73,14 +73,13 @@ const Login = () => {
                 });
             }
 
+            
 
-            localStorage.setItem('accessToken', res.data.accessToken);
-
-            console.log('Response: ', res.data);
+            // console.log('Response: ', res.data);
 
 
             setTimeout(() => {
-                nextPage('/bmi');
+                nextPage('/bmi', {replace: true});
             }, 4500);
 
         }

@@ -6,9 +6,13 @@ const SplashScreen = () => {
 
     const nextPage = useNavigate();
 
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('isAuthenticated');
+
     setTimeout(() => {
         nextPage('/landing');
-    }, 10000);
+    }, 5000);
 
 
 

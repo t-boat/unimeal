@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import maleFoto from "../assets/male.webp";
 import femaleFoto from "../assets/female.webp";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 
 
 const Landing = () => {
