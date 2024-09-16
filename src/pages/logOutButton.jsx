@@ -32,7 +32,7 @@ const LogOutButton = () => {
 
     return (
 
-        <button onClick={logOutUser} className="flex items-center gap-1 text-[12pt] font-semibold px-[0.5em] py-[0.2em] border-black border-2 rounded-md hover:bg-red-950 hover:text-white">
+        <button onClick={logOutUser} className="flex items-center gap-1 text-[12pt] font-semibold px-[0.25em] py-[0.2em] border-black border-2 rounded-md hover:bg-red-950 hover:text-white">
 
             <LogOut className="size-[17px]" /> Logout
 

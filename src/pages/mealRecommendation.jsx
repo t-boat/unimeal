@@ -103,6 +103,12 @@ const MealRecommendation = () => {
     };
 
 
+    // window.onload = () => {
+
+    //     // const queryParams = queryString.parse(window.location.search);
+    //     // const { bmi } = queryParams;
+    // }
+
 
     useEffect(() => {
         checkURLSearchParams(); // Call the function to check URLSearchParams on component mount
@@ -111,21 +117,11 @@ const MealRecommendation = () => {
 
 
 
-    // window.onload = () => {
-
-    //     // const queryParams = queryString.parse(window.location.search);
-    //     // const { bmi } = queryParams;
-    // }
-
-
-
-
-
     return (
 
         <div className="flex flex-col justify-center items-center text-family relative">
 
-            <Link to={'/bmi'} className='absolute top-[0.5rem] left-[0.5rem] flex items-center text-[11pt]'>
+            <Link to={'/bmi'} className='absolute top-[1rem] left-[0.5rem] flex items-center text-[11pt]'>
                 <ArrowBigLeft /> Go Back
             </Link>
 
@@ -135,7 +131,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id="recommendation1" style={{ display: 'none' }} className="w-[70%]">
+            <div id="recommendation1" style={{ display: 'none' }} className="w-[80%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to facilitate weight gain.</p>
 
@@ -183,14 +179,14 @@ const MealRecommendation = () => {
                 - Include protein in every meal to support muscle growth. <br />
                 - Stay hydrated but avoid drinking water before meals to avoid feeling too full. <br /> <br />
 
-                These meal ideas should help you increase your calorie intake in a healthy and balanced way, allowing you to gain healthy weight.
+                <p className='text-[rgb(176,42,48)]'>These meal ideas should help you increase your calorie intake in a healthy and balanced way, allowing you to gain healthy weight.</p>
 
             </div>
 
 
 
 
-            <div id="recommendation2" style={{ display: 'none' }} className="w-[70%]">
+            <div id="recommendation2" style={{ display: 'none' }} className="w-[80%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
 
@@ -233,14 +229,14 @@ const MealRecommendation = () => {
                 - Variety: Include a variety of foods in your diet to ensure you're getting all the nutrients you need. <br />
                 - Limit Processed Foods: Minimize the intake of processed and sugary foods. <br /> <br />
 
-                These meals are designed to be balanced, providing a mix of macronutrients (protein, fats, and carbohydrates) along with plenty of vitamins and minerals.
+                <p className='text-[rgb(176,42,48)]'>These meals are designed to be balanced, providing a mix of macronutrients (protein, fats, and carbohydrates) along with plenty of vitamins and minerals.</p>
 
             </div>
 
 
 
 
-            <div id="recommendation3" style={{ display: 'none' }} className="w-[70%]">
+            <div id="recommendation3" style={{ display: 'none' }} className="w-[80%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
 
@@ -322,14 +318,14 @@ const MealRecommendation = () => {
                 - Control portion sizes, especially with high-calorie foods like nuts and oils. <br />
                 - Stay hydrated by drinking plenty of water. <br /> <br />
 
-                These meals are designed to be nutrient-dense and filling while helping with weight management.
+                <p className='text-[rgb(176,42,48)]'>These meals are designed to be nutrient-dense and filling while helping with weight management.</p>
 
             </div>
 
 
 
 
-            <div id="recommendation4" style={{ display: 'none' }} className="w-[70%]">
+            <div id="recommendation4" style={{ display: 'none' }} className="w-[80%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
 
@@ -395,13 +391,13 @@ const MealRecommendation = () => {
                 - Hydration: Drink plenty of water throughout the day. <br />
                 - Healthy Fats: Include sources of healthy fats like avocados, nuts, and olive oil, but be mindful of portions. <br /> <br />
 
-                These meals are designed to be satisfying while helping to create a calorie deficit for fat loss.
+                <p className='text-[rgb(176,42,48)]'>These meals are designed to be satisfying while helping to create a calorie deficit for fat loss.</p>
 
             </div>
 
 
 
-            <div id='recommendation5' style={{ display: 'none' }} className='mt-[4em] text-center text-[13pt]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the BMI Calculator page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
+            <div id='recommendation5' style={{ display: 'none' }} className='mt-[4em] text-center text-[13pt] text-[rgb(176,42,48)]'>Unfortunately, without a valid BMI value, I cannot recommend a meal for you. <br />Kindly head back to the BMI Calculator page and compute your BMI. Then I will be happy to recommend something "special" for you. </div>
 
         </div>
     );
