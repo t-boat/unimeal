@@ -22,6 +22,7 @@ const CalculatorPage = () => {
 
 
     const bmi = (weight / heightSquared).toFixed(1);
+    // const bmi = Math.round((weight / heightSquared) * 100) / 100;
 
     const bmiValue = Number(bmi);
 
@@ -32,8 +33,6 @@ const CalculatorPage = () => {
 
 
     const bmiCalculator = () => {
-
-        // const bmi = Math.round((weight / heightSquared) * 100) / 100;
 
         document.getElementById("bmi").innerText = bmi;
 
@@ -87,7 +86,7 @@ const CalculatorPage = () => {
                     </div>
 
                     <p className="mt-[3.5rem] mb-[1rem] text-center text-[15pt] font-semibold">
-                        Welcome, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
+                        Hello, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
                     </p>
 
 
@@ -208,7 +207,7 @@ const CalculatorPage = () => {
 
                     <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem]" >
 
-                        Based on your Body Mass Index, CLICK HERE to get recommended meals to <span id="recommend-action" className="my-rainbow font-semibold" ></span>
+                        Based on your Body Mass Index <span className="my-rainbow">CLICK HERE</span> to get recommended meals to <span id="recommend-action" className="font-semibold" ></span>
 
                     </Link>
 
@@ -240,7 +239,7 @@ const CalculatorPage = () => {
                     </div>
 
                     <p className="mt-[4rem] mb-[1rem] text-center text-[15pt] font-semibold">
-                        Welcome, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
+                        Hello, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
                     </p>
 
 
@@ -359,9 +358,9 @@ const CalculatorPage = () => {
 
 
 
-                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem] text-center" >
+                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem]" >
 
-                        Based on your Body Mass Index, CLICK HERE to get recommended meals to <span id="recommend-action" className="my-rainbow font-semibold" ></span>
+                        Based on your Body Mass Index <span className="my-rainbow">CLICK HERE</span> to get recommended meals to <span id="recommend-action" className="font-semibold" ></span>
 
                     </Link>
 
@@ -393,7 +392,7 @@ const CalculatorPage = () => {
                     </div>
 
                     <p className="mt-[4rem] mb-[1rem] text-center text-[12.5pt] font-semibold">
-                        Welcome, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
+                        Hello, <span className="text-[rgb(176,42,48)]">{currentUser}</span>
                     </p>
 
 
@@ -512,9 +511,9 @@ const CalculatorPage = () => {
 
 
 
-                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem] text-center" >
+                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem]" >
 
-                        Based on your Body Mass Index, CLICK HERE to get recommended meals to <span id="recommend-action" className="my-rainbow font-semibold" ></span>
+                        Based on your Body Mass Index <span className="my-rainbow">CLICK HERE</span> to get recommended meals to <span id="recommend-action" className="font-semibold" ></span>
 
                     </Link>
 
