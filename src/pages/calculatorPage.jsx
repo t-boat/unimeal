@@ -217,7 +217,7 @@ const CalculatorPage = () => {
                         Introduction to the Body Mass Index
                     </p>
 
-                    <p className="mx-[4rem] text-[rgba(0,0,0,0.6)]">
+                    <p className="mx-[2rem] text-justify text-[rgba(0,0,0,0.6)]">
                         Body Mass Index (BMI) is widely used as an indicator of body fat content. Your weight alone is not sufficient to establish if you are in a healthy weight range. For example, a tall but slender person can weigh more than a short but plump individual. But the former may enjoy better health as long as their weight is suitable for their height. The ideal weight is also likely to differ for men and women of similar heights. <br /> <br />
 
                         How then do you know whether you fall in the healthy weight range or not? Your BMI solves this confusion. It correlates your weight with your height and evaluates whether your weight is appropriate for your stature. You can use a BMI calculator to find out your BMI. <br /> <br />
@@ -358,7 +358,7 @@ const CalculatorPage = () => {
 
 
 
-                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem]" >
+                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="mt-[1rem] text-center" >
 
                         Based on your Body Mass Index <span className="my-rainbow">CLICK HERE</span> to get recommended meals to <span id="recommend-action" className="font-semibold" ></span>
 
@@ -370,7 +370,7 @@ const CalculatorPage = () => {
                         Introduction to the Body Mass Index
                     </p>
 
-                    <p className="mx-[4rem] text-[rgba(0,0,0,0.6)]">
+                    <p className="mx-[1.5rem] text-justify text-[rgba(0,0,0,0.6)]">
                         Body Mass Index (BMI) is widely used as an indicator of body fat content. Your weight alone is not sufficient to establish if you are in a healthy weight range. For example, a tall but slender person can weigh more than a short but plump individual. But the former may enjoy better health as long as their weight is suitable for their height. The ideal weight is also likely to differ for men and women of similar heights. <br /> <br />
 
                         How then do you know whether you fall in the healthy weight range or not? Your BMI solves this confusion. It correlates your weight with your height and evaluates whether your weight is appropriate for your stature. You can use a BMI calculator to find out your BMI. <br /> <br />
@@ -511,7 +511,7 @@ const CalculatorPage = () => {
 
 
 
-                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="max-w-fit mx-auto mt-[1rem]" >
+                    <Link id="recommend" style={{ display: "none", color: 'blue' }} to={`/meals?bmi=${bmi}`} className="mt-[1rem] text-center" >
 
                         Based on your Body Mass Index <span className="my-rainbow">CLICK HERE</span> to get recommended meals to <span id="recommend-action" className="font-semibold" ></span>
 
@@ -523,7 +523,7 @@ const CalculatorPage = () => {
                         Introduction to the Body Mass Index
                     </p>
 
-                    <p className="mx-[4rem] text-[rgba(0,0,0,0.6)]">
+                    <p className="mx-[1rem] text-justify text-[rgba(0,0,0,0.6)]">
                         Body Mass Index (BMI) is widely used as an indicator of body fat content. Your weight alone is not sufficient to establish if you are in a healthy weight range. For example, a tall but slender person can weigh more than a short but plump individual. But the former may enjoy better health as long as their weight is suitable for their height. The ideal weight is also likely to differ for men and women of similar heights. <br /> <br />
 
                         How then do you know whether you fall in the healthy weight range or not? Your BMI solves this confusion. It correlates your weight with your height and evaluates whether your weight is appropriate for your stature. You can use a BMI calculator to find out your BMI. <br /> <br />

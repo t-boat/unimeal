@@ -119,7 +119,7 @@ const MealRecommendation = () => {
 
     return (
 
-        <div className="flex flex-col justify-center items-center text-family relative">
+        <div className="flex flex-col items-center text-family relative">
 
             <Link to={'/bmi'} className='absolute top-[1rem] left-[0.5rem] flex items-center text-[11pt]'>
                 <ArrowBigLeft /> Go Back
@@ -131,7 +131,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id="recommendation1" style={{ display: 'none' }} className="w-[80%]">
+            <div id="recommendation1" style={{ display: 'none' }} className="max-w-[90%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to facilitate weight gain.</p>
 
@@ -147,15 +147,15 @@ const MealRecommendation = () => {
                     3. Greek Yogurt with Granola and Honey: Full-fat Greek yogurt mixed with granola, nuts, dried fruits, and a drizzle of honey. <br /> <br /> <br />
                 </p>
 
-                <p className="text-right font-bold text-[15pt] text-[rgb(176,42,48)]">Lunch</p> <br />
+                <p className="font-bold text-[15pt] text-[rgb(176,42,48)] clear-left">Lunch</p> <br />
                 <p>
-                    <img src={lunchOne} alt="" className='object-scale-down size-[150px] float-right ml-4' />
+                    <img src={lunchOne} alt="" className='object-scale-down size-[150px] float-left mr-4' />
                     1. Grilled Chicken Wrap: Whole-wheat wrap filled with grilled chicken, avocado, cheese, lettuce, and a creamy dressing. <br />
                     2. Salmon with Quinoa and Veggies: Grilled or baked salmon served with quinoa, roasted vegetables, and a drizzle of olive oil. <br />
                     3. Pasta with Pesto and Chicken: Whole-grain pasta tossed with pesto sauce, grilled chicken, and a side of garlic bread. <br /> <br /> <br />
                 </p>
 
-                <p className="font-bold text-[15pt] text-[rgb(176,42,48)]">Dinner</p> <br />
+                <p className="font-bold text-[15pt] text-[rgb(176,42,48)] clear-left">Dinner</p> <br />
                 <p>
                     <img src={dinnerOne} alt="" className='object-scale-down size-[150px] float-left mr-4' />
                     1. Baked Sweet Potatoes with Ground Turkey: Sweet potatoes stuffed with ground turkey, black beans, and topped with cheese and sour cream. <br />
@@ -186,7 +186,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id="recommendation2" style={{ display: 'none' }} className="w-[80%]">
+            <div id="recommendation2" style={{ display: 'none' }} className="max-w-[90%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to maintain your healthy weight.</p>
 
@@ -202,15 +202,15 @@ const MealRecommendation = () => {
                     ** Greek Yogurt with Granola and Berries: Choose plain Greek yogurt, add a serving of granola, and mix in fresh berries. <br /> <br /> <br />
                 </p>
 
-                <p className="text-right font-bold text-[15pt] text-[rgb(176,42,48)]">Lunch</p> <br />
+                <p className="font-bold text-[15pt] text-[rgb(176,42,48)]">Lunch</p> <br />
                 <p>
-                    <img src={lunchTwo} alt="" className='object-scale-down size-[150px] float-right ml-4' />
+                    <img src={lunchTwo} alt="" className='object-scale-down size-[150px] float-left mr-4' />
                     ** Vegetable Stir-Fry with Tofu: Stir-fry a mix of colorful vegetables (like bell peppers, broccoli, and carrots) with tofu. Serve over brown rice or quinoa. <br />
                     ** Turkey and Avocado Sandwich: Use whole-grain bread, lean turkey slices, avocado, lettuce, and tomato. Pair with a side of carrot sticks or a small apple. <br />
                     ** Grilled Chicken Salad: Mix grilled chicken breast with a variety of leafy greens, cherry tomatoes, cucumbers, and a light vinaigrette. Add some quinoa or whole-grain bread on the side. <br /> <br /> <br />
                 </p>
 
-                <p className="font-bold text-[15pt] text-[rgb(176,42,48)]">Dinner</p> <br />
+                <p className="font-bold text-[15pt] text-[rgb(176,42,48)] clear-left">Dinner</p> <br />
                 <p>
                     <img src={dinnerTwo} alt="" className='object-scale-down size-[150px] float-left mr-4' />
                     ** Baked Salmon with Sweet Potatoes and Asparagus: Season salmon with herbs and bake until cooked. Serve with roasted sweet potatoes and steamed asparagus. <br />
@@ -236,7 +236,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id="recommendation3" style={{ display: 'none' }} className="w-[80%]">
+            <div id="recommendation3" style={{ display: 'none' }} className="max-w-[90%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to shed some weight.</p>
 
@@ -325,7 +325,7 @@ const MealRecommendation = () => {
 
 
 
-            <div id="recommendation4" style={{ display: 'none' }} className="w-[80%]">
+            <div id="recommendation4" style={{ display: 'none' }} className="max-w-[90%]">
 
                 <p className="text-[rgb(176,42,48)] text-[13pt] mt-[4em] mb-[2rem]" >Based on your BMI, the meals below are recommended for you to support fat burning and get rid of extra weight faster.</p>
 
